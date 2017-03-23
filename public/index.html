@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>CabBooking</title>
+  <!-- load bootstrap and fontawesome via CDN -->
+  <style>
+  body{
+  font-family: 'Raleway', sans-serif;
+}
+html,body, .container-fluid, .sidebar2,.main-content{
+  height:100%;
+}
+.sidebar2 {
+    background-color: #1a1f27;
+    padding: 0px !important;
+    box-shadow: 2px 2px 5px #262a35;
+    z-index: 1000;
+    height: 100%;
+    position: fixed;
+
+}
+.logo {
+    min-height:200px;
+    color:#afb1b5;
+}
+.logo>img {
+    margin-top: 30px;
+    padding: 1px;
+    border: 3px solid #F17153;
+    border-radius: 100%;
+    background-color: royalblue;
+}
+.btn.Add-friend
+{
+  background-color:royalblue;
+<!--#e65e50-->
+  border: 1px solid royalblue;
+  color:#eee;
+}
+.btn.Add-friend:hover,.btn.Add-friend:active,.btn.Add-friend:active:focus,.btn.Add-friend:active:hover,.btn.Add-friend:visited,.btn.Add-friend:focus
+{
+  background-color:royalblue;
+  border: 1px solid royalblue;
+  color:white;
+  outline:none;
+  font-weight:600;
+}
+.coins
+{
+  display:inline-block;
+  font-size:20px;
+font-family:'"Helvetica Neue",Helvetica,Arial,sans-serif';
+}
+.list {
+    color: #eee;
+    list-style: none;
+    padding-left: 0px;
+}
+li:nth-child(odd) {
+    background-color:transperent;
+}
+li>i {margin-right:15px;
+}
+.list> li {
+    padding: 15px 0px 15px 40px;
+    font-size: 16px;
+    font-weight:lighter;
+}
+.list>li:hover {
+
+    color: white;
+    box-shadow:1px 1px 10px 1px #50e6df inset;
+    transition: padding-left 0.2s linear;
+    padding-left: 60px;
+
+}
+
+body
+{
+    background-image: url("img/roll2.jpg");
+    background-size:cover;
+overflow:hidden;
+   }
+
+  </style>
+      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link media="all" type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+</head>
+<body ng-app="movieApp" style="overflow:hidden">
+
+           <div class="container-fluid">
+               <div class="row">
+                   <div class="col-md-3 col-sm-3 sidebar2" style="background-color: transparent;">
+                       <div class="logo text-center">
+                           <img src="img/lo1.jpg" class="img-responsive center-block" alt="Logo" style="height:159px;">
+
+                             <div style="padding:10px">
+                           <button type="button" class="btn btn-default Add-friend">
+         <i class="fa fa-car" aria-hidden="true"></i>AnyTimeCab.com
+       </button></div>
+
+                       </div>
+                       <br>
+
+                       <div class="left-navigation">
+
+                           <ul class="list">
+
+                               <li class="activate"><a href="#/" style="color:white"><i class="glyphicon glyphicon-home" aria-hidden="true"></i>Home</a></li>
+                               <li><a href="#/book" style="color:white"><i class="glyphicon glyphicon-tower"aria-hidden="true"></i>Book Cab</a></li>
+                               <li><a href="#/moviebook" style="color:white"><i class="fa fa-hand-o-right" aria-hidden="true"></i>sample</a></li>
+                              <li><i class="fa fa-trophy" aria-hidden="true"></i>Cancellation</li>
+
+                               <li><a href="#/admin" style="color:white"><i class="glyphicon glyphicon-tower"aria-hidden="true"></i>Admin</a></li>
+                           </ul>
+                       </div>
+                   </div>
+                   <div class="col-md-9 col-sm-8 main-content">
+
+
+                          <div ng-view></div>
+
+
+               </div></div>
+
+           </div>
+
+
+
+
+<script type="text/javascript" src="/build/bundle.js"></script>
+</body>
+</html>
