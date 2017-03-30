@@ -3,7 +3,7 @@ var logger = require('morgan');
 var express = require('express');
 var app = express();
 var bodyParser=require('body-parser');
-
+var UserRoute = require('./routes/usercrud.js');
 var routes = require('./routes/Cartype-crud');
 var routesDriver = require('./routes/driver-crud');
 var routesCity1 = require('./routes/cityName-crud');
@@ -20,7 +20,6 @@ app.use('/drive', routesDriver);
 app.use('/ctyNa', routesCity1);
 app.use('/bkc', routesBooking);
 app.use('/cnfm', routesConfimation);
-
 
 
 
@@ -41,6 +40,14 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function(){
   console.log("Connected to DB");
 });
+
+
+db.on('error', function(err) {
+    console.log(err);
+});
+app.use('/api', UserRoute);
+
+
 // Only load this middleware in dev mode (important).
 if (app.get('env') === 'development') {
   var webpackMiddleware = require("webpack-dev-middleware");
