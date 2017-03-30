@@ -68,15 +68,15 @@
 <form class="form" name="myForm" ng-submit="ConfirmBook(cndetaillist)" style="color:white;background-color: TRANSPARENT;width: 63%;">
   <label><b>User Name</b></label>
 
-  <input class="form-control" type="text" ng-model="cndetail.cnUser" required>
+  <input class="form-control" type="text" ng-model="cndetail.Cname" required>
 
   <label><b>Mail ID</b></label>
   <td>
-  <input class="form-control" type="email" ng-model="cndetail.cnMail" required>
+  <input class="form-control" type="email" ng-model="cndetail.Mail" required>
 
   <label><b>Mobile No</b></label>
 
-  <input class="form-control" ng-model="cndetail.mobile" minlength="10" type="text" required>
+  <input class="form-control" ng-model="cndetail.Mobile" minlength="10" type="text" required>
 
 
 <button type="submit" ng-disabled="myForm.$invalid" class="btn btn-success">CONFIRM</button>

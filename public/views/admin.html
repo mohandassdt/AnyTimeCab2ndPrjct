@@ -229,7 +229,7 @@ label .fa {
         <td style="padding:5px"><input type="text" class="form-control"  ng-model="drive.age" minlength="1" required></td>
         <td style="padding:5px"><input type="text" class="form-control" ng-model="drive.Mobile" minlength="1" required></td>
       <td style="padding:5px">  <input type="text" class="form-control"  ng-model="drive.licence" minlength="1" required></td>
-        <td style="padding:5px;width:10%"><select  class="form-control" ng-model="drive.type" required>
+        <td style="padding:5px;width:10%"><select  class="form-control" ng-model="drive.drtype" required>
 
                <option style="text align:cenetr;color:#999" disabled selected >Car Type</option>
              <option  ng-repeat="t in typelist">{{t.CrTp}}</option>
@@ -265,7 +265,7 @@ label .fa {
       <td>{{drive.age}}</td>
         <td>{{drive.Mobile}}</td>
           <td>{{drive.licence}}</td>
-          <td>{{drive.type}}</td>
+          <td>{{drive.drtype}}</td>
           <td>{{drive.Car}}</td>
             <td>{{drive.carNo}}</td>
 
@@ -291,7 +291,7 @@ label .fa {
 	<div class="col-sm-1"><b style="padding:3px">Date</b></div>
 	<div class="col-sm-1"><b style="padding:3px">Time</b></div>
 	<div class="col-sm-1"><b style="padding:3px">Drivers</b></div>
-	<div class="col-sm-1"><b style="padding:3px">Time</b></div>
+	<!-- <div class="col-sm-1"><b style="padding:3px">Time</b></div> -->
 
 </div>
 <div ng-show="BookedCabs" ng-repeat="n in alBoklist" style="display: inline-flex;">
@@ -300,7 +300,17 @@ label .fa {
 			<p style="padding:11px">{{n.CDesinationLoc}}</p>
 				<p style="padding:11px">{{n.CPickdate}}</p>
 					<p style="padding:11px">{{n.CPickTime}}</p>
+
+					<select  class="form-control" ng-model="drive.type" style="width: 120px;" required>
+
+	               <option style="text align:cenetr;color:#999" disabled selected >Car Type</option>
+	             <option  ng-repeat="d in drlist">{{d.Did}}</option>
+
+	         </select>
 				<!-- <p style="padding:11px">{{n.CPickTime}}</p></div> -->
+
+
+
 
   </section>
 
