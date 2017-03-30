@@ -24,7 +24,7 @@ module.exports = function($scope, $http,$rootScope,$location) {
     $scope.cndetail.CPickdate=$scope.cnf.Pickdate;
     $scope.cndetail.CAmount=$scope.cnf.amount;
 
-
+console.log($scope.cndetail.Mobile);
 
       $http.post('/cnfm/cnfm', $scope.cndetail).success(function (response) {
           console.log(response);

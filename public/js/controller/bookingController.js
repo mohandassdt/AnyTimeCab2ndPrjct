@@ -16,8 +16,10 @@ module.exports = function($scope, $http,$log) {
 
 $scope.BookedCabs=false;
 
-var j;
+var j,q;
 var uniqueObj = [];
+var uniqueDriver = [];
+var uniqueDriverID = [];
 $scope.vieBook=function(){
   $scope.dateBooked=document.getElementById("dateB").value;
 console.log($scope.dateBooked);
@@ -27,13 +29,27 @@ for(j=0;j<=$scope.cndetaillist.length;j++){
 if($scope.cndetaillist[j].CPickdate==$scope.dateBooked){
 uniqueObj.push($scope.cndetaillist[j]);
 
+
   $scope.BookedCabs=true;
+for(q=0;q<=$scope.driverlist.length;q++){
+if($scope.cndetaillist[j].CType==$scope.driverlist[q].drtype){
+  uniqueDriver.push($scope.driverlist[q]);
+  uniqueDriverID.push($scope.driverlist[q]).Did;
+console.log($scope.driverlist[q].Did);
+console.log($scope.driverlist[q]);
+
+}}
+
+
 
 }
 }
 
 }
   $scope.alBoklist=uniqueObj;
+  $scope.drlist=uniqueDriver;
+
+
 
 var refreshType = function () {
       $http.get('/crtype/crtype').success(function (response) {

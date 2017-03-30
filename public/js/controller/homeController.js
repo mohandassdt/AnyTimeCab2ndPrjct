@@ -12,6 +12,12 @@ module.exports = function($scope, $http) {
 
     refreshType();
 
+    $scope.RegisterUser = function() {
+    $http.post('/api/signup', $scope.User).then(function(response) {
+        alert('User Registration Successful');
+    });
+}
+
     var i;
     var money;
     $scope.showmeFare = false;
