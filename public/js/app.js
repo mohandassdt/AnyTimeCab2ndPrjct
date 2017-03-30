@@ -65,6 +65,30 @@ app.config(function($routeProvider) {
   });
 
 
+
+  app.run(function($rootScope, $http, $location, $sessionStorage, $cookies) {
+      if ($sessionStorage.tokenDetails) {
+          $http.defaults.headers.common.Authorization = $sessionStorage.tokenDetails.token;
+      }
+
+      // redirect to login page if not logged in and trying to access a restricted page
+      $rootScope.$on('$locationChangeStart', function(event, next, current) {
+          var publicPages = ['/', '/Login', '/Register'];
+
+          var authUser = $cookies.getObject('authUser');
+          if (authUser != undefined) {
+              var loggedInUser = authUser.currentUser.userInfo;
+          }
+          var restrictedPage = publicPages.indexOf($location.path()) === -1;
+          if (restrictedPage && !$sessionStorage.tokenDetails && $location.path() != '') {
+              $location.path('/Login');
+          }
+          // console.log(restrictedPage);
+          // console.log($sessionStorage.tokenDetails);
+      });
+  });
+
+
   // app.filter('unique', function() {
   //     return function(input, key) {
   //         var unique = {};
